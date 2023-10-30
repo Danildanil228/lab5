@@ -1,12 +1,21 @@
-﻿Console.Write("Введите первое однозначное число a: ");
-int a = int.Parse(Console.ReadLine());
-Console.Write("Введите второе однозначное число b: ");
-int b = int.Parse(Console.ReadLine());
-Console.Write("Введи произведение этих чисел c: ");
-int c = int.Parse(Console.ReadLine());
-if (a * b == c) Console.Write("Молодец, правильно!");
-else
+Random random = new Random();
+int[] mas = new int[10];
+for (int i = 0; i < mas.Length; i++)
 {
-    Console.Write($"Неправильно, результат произведения чисел {a} и {b} будет равен ");
-    Console.Write(a * b);
+    mas[i] = random.Next(1, 100);
+    Console.WriteLine(mas[i] + " ");
 }
+Console.WriteLine();
+Console.WriteLine("индексы тех элементов, значения которых больше, чем у стоящих справа от него: ");
+int count = 0;
+for (int i = 0; i < mas.Length - 1; i++)
+{
+    if (mas[i] > mas[i+1])
+    {
+        Console.WriteLine(i);
+        count++;
+    }    
+
+    
+}
+Console.WriteLine("количество: " + count);
